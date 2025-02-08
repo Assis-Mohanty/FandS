@@ -1,6 +1,6 @@
-const { CityService } = require("../services/index")
+const { CityService } = require("../services/index");
 
-const cityService=new CityService();
+const cityService= new CityService();
 
 const create= async(req,res)=>{
     try {
@@ -10,7 +10,7 @@ const create= async(req,res)=>{
             success: true,
             message:"Successfully created a city",
             err:{}
-        });
+        }); 
     } catch (error) {
         console.log(error)
         return res.status(500).json({
@@ -46,7 +46,7 @@ const get=async(req,res)=>{
         return res.status(201).json({
             data: city,
             success: true,
-            message:"Successfully deleted a city",
+            message:"Successfully fetched a city",
             err:{}
         });
     } catch (error) {
