@@ -17,29 +17,30 @@ class CityRepository {
                     id: cityId
                 }
             });
-            return true
+            return true;
         } catch (error) {
-            console.log("Something went wrong with the repository layer")
-            throw {error};
+            console.error("Repository Error (deleteCity):", error.message);
+            throw {error}; 
         }
     }
 
     async getCity({cityId}){
         try {
             const city = await City.findByPk(cityId);
-            return city
+            return city;
         } catch (error) {
             console.log("Something went wrong with the repository layer")
             throw {error};
         }
     }
 
-    async updateCity(cityId,data){
+    async updateCity({cityId,data}){
         try{
             const city=await City.update(data,{where:{id:cityId}})
             return city;
         } catch (error) {
-            throw error
+            console.log("Something went wrong with the repository layer")
+            throw {error};
         }
     }
 }
