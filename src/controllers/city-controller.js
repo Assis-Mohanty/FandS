@@ -98,6 +98,16 @@ const getAll=async(req,res)=>{
             err: error
         });
     }
+    
+}
+const createMulCity=async(req,res)=>{
+    const cities=await cityService.createMulCity(req.body)
+    return res.status(201).json({
+        data:cities,
+        success:true,
+        message:"Successfully created multiple cities",
+        err:{}
+    })
 }
 
 
@@ -106,5 +116,6 @@ module.exports={
     destroy,
     get,
     update,
-    getAll
+    getAll,
+    createMulCity
 }
