@@ -9,9 +9,9 @@ router.get('/city/:id',CityController.get);
 router.patch("/city/:id",CityController.update);
 router.get("/city",CityController.getAll)
 router.post("/cities",CityController.createMulCity)
-router.post("/airport",CityController.create);
-router.delete("/airport/:id",CityController.destroy);
-router.get('/airport/:id',CityController.get);
-router.patch("/airport/:id",CityController.update);
+router.post("/airport",AiprortController.create);
+router.delete("/airport/:id",AiprortController.destroy);
+router.get('/airport/:id',AiprortController.get);
+router.patch("/airport/:id",AiprortController.update);
 
 module.exports=router;

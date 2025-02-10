@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const {Airport,City} = require("./models/index.js");
+const {Airplane,City} = require("./models/index.js");
 const ApiRoutes= require('./routes/index');
 const { PORT } = require("./config/serverConfig.js");
 const airport = require("./models/airport.js");
@@ -19,7 +19,9 @@ const setupAndStartServer =async()=>{
         if(process.env.SYNC_DB){
             db.sequelize.sync({alter:true})
         } 
-
+        await Airplane.create({
+            modelNumber:"Airbus A110"
+        })
     })   
 
 }
