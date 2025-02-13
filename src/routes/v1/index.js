@@ -21,5 +21,6 @@ router.get('/airports',AiprortController.getAll);
 router.post("/flights",FlightMiddleWares,FlightController.create);
 router.get("/flight/:id",FlightController.get);
 router.get("/flights",FlightController.getAll);
+router.patch("/flight/:id",FlightController.update);
 
 module.exports=router;
